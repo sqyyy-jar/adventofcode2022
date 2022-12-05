@@ -7,6 +7,7 @@ pub fn main() {
     let b_lookup = [[3, 4, 8], [1, 5, 9], [2, 6, 7]];
     fs::read_to_string(args().collect::<Vec<String>>().get(1).unwrap())
         .unwrap()
+        .trim_end()
         .replace('\r', "")
         .split('\n')
         .for_each(|it| {

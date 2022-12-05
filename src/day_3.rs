@@ -5,6 +5,7 @@ pub fn main() {
     let mut a = 0;
     let text = fs::read_to_string(args().collect::<Vec<String>>().get(1).unwrap())
         .unwrap()
+        .trim_end()
         .replace('\r', "");
     let lines = text.split('\n').collect::<Vec<_>>();
     for s in &lines {

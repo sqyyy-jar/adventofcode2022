@@ -3,6 +3,7 @@ use std::{env::args, fs};
 pub fn main() {
     let text = fs::read_to_string(args().collect::<Vec<String>>().get(1).unwrap())
         .unwrap()
+        .trim_end()
         .replace('\r', "");
     let mut sums: Vec<_> = text
         .split("\n\n")
